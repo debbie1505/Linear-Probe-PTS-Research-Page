@@ -1,0 +1,271 @@
+// Mobile First Responsive Design
+
+// Small devices (phones, 576px and up)
+@media (max-width: #{$breakpoint-sm - 1px}) {
+  .container {
+    padding: 0 $spacing-sm;
+  }
+  
+  .paper-title {
+    font-size: $font-size-2xl;
+  }
+  
+  .hero {
+    padding: $spacing-xl 0;
+    
+    .hero-title {
+      font-size: $font-size-2xl;
+    }
+    
+    .hero-subtitle {
+      font-size: $font-size-lg;
+    }
+    
+    .hero-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  .navbar {
+    .navbar-toggle {
+      display: flex;
+    }
+    
+    .navbar-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: white;
+      border-top: 1px solid $border-color;
+      box-shadow: $shadow-md;
+      
+      &.active {
+        display: block;
+      }
+      
+      .navbar-nav {
+        flex-direction: column;
+        padding: $spacing-md;
+        gap: 0;
+        
+        .nav-item {
+          border-bottom: 1px solid $border-color;
+          
+          &:last-child {
+            border-bottom: none;
+          }
+        }
+        
+        .nav-link {
+          display: block;
+          padding: $spacing-md 0;
+        }
+      }
+    }
+  }
+  
+  .paper-actions {
+    flex-direction: column;
+    
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: $spacing-lg;
+  }
+  
+  .features {
+    grid-template-columns: 1fr;
+  }
+  
+  .method-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: $breakpoint-sm) and (max-width: #{$breakpoint-md - 1px}) {
+  .paper-title {
+    font-size: $font-size-3xl;
+  }
+  
+  .hero-title {
+    font-size: $font-size-3xl;
+  }
+  
+  .features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .method-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: $breakpoint-md) {
+  .navbar {
+    .navbar-toggle {
+      display: none;
+    }
+    
+    .navbar-menu {
+      display: block;
+    }
+  }
+  
+  .hero {
+    .hero-actions {
+      flex-direction: row;
+    }
+  }
+  
+  .paper-actions {
+    flex-direction: row;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: $breakpoint-lg) {
+  .container {
+    max-width: $container-max-width;
+  }
+  
+  .paper {
+    max-width: 900px;
+  }
+  
+  .features {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .method-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .results-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// Print Styles
+@media print {
+  .navbar,
+  .site-footer,
+  .paper-actions,
+  .citation-info {
+    display: none;
+  }
+  
+  .paper {
+    max-width: none;
+    padding: 0;
+  }
+  
+  .paper-title {
+    font-size: 18pt;
+    margin-bottom: 12pt;
+  }
+  
+  h2 {
+    font-size: 14pt;
+    margin-top: 12pt;
+    margin-bottom: 6pt;
+  }
+  
+  h3 {
+    font-size: 12pt;
+    margin-top: 10pt;
+    margin-bottom: 4pt;
+  }
+  
+  p {
+    font-size: 10pt;
+    line-height: 1.4;
+    margin-bottom: 6pt;
+  }
+  
+  .abstract {
+    background: none;
+    border: 1px solid #000;
+    padding: 8pt;
+  }
+  
+  figure {
+    page-break-inside: avoid;
+  }
+  
+  .chart-container {
+    page-break-inside: avoid;
+  }
+}
+
+// High DPI Displays
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .author-photo,
+  figure img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+// Reduced Motion
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+// Dark Mode Support
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --border-color: #333;
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+  }
+  
+  .navbar {
+    background-color: var(--bg-color);
+    border-bottom-color: var(--border-color);
+  }
+  
+  .paper {
+    background-color: var(--bg-color);
+  }
+  
+  .abstract,
+  .background-light {
+    background-color: #2a2a2a;
+  }
+  
+  .btn-secondary {
+    border-color: var(--border-color);
+    color: var(--text-color);
+  }
+}

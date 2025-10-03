@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+    
+    <!-- Academic SEO -->
+    <meta name="citation_title" content="{{ site.paper.title }}">
+    <meta name="citation_author" content="{{ site.paper.authors | join: '; ' }}">
+    <meta name="citation_publication_date" content="{{ site.paper.year }}">
+    <meta name="citation_journal_title" content="{{ site.paper.journal }}">
+    <meta name="citation_doi" content="{{ site.paper.doi }}">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ '/assets/images/favicon.ico' | relative_url }}">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "headline": "{{ site.paper.title }}",
+        "author": [
+            {% for author in site.paper.authors %}
+            {
+                "@type": "Person",
+                "name": "{{ author }}"
+            }{% unless forloop.last %},{% endunless %}
+            {% endfor %}
+        ],
+        "datePublished": "{{ site.paper.year }}",
+        "publisher": {
+            "@type": "Organization",
+            "name": "{{ site.paper.journal }}"
+        },
+        "doi": "{{ site.paper.doi }}"
+    }
+    </script>
+    
+    {% seo %}
+</head>
+<body>
+    {% include header.html %}
+    
+    <main class="main-content">
+        {{ content }}
+    </main>
+    
+    {% include footer.html %}
+    
+    <!-- JavaScript -->
+    <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+    {% if page.layout == 'paper' %}
+    <script src="{{ '/assets/js/paper.js' | relative_url }}"></script>
+    {% endif %}
+</body>
+</html>

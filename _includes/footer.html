@@ -1,0 +1,41 @@
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Research Paper</h3>
+                <p>{{ site.paper.title }}</p>
+                <p class="authors">{{ site.paper.authors | join: ', ' }}</p>
+                <p class="journal">{{ site.paper.journal }}, {{ site.paper.year }}</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Author</h3>
+                <p>{{ site.author }}</p>
+                <p>{{ site.email }}</p>
+                <div class="social-links">
+                    {% for link in site.social.links %}
+                    <a href="{{ link }}" target="_blank" rel="noopener">
+                        <i class="icon-external"></i>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Citation</h3>
+                <p class="citation">
+                    {{ site.paper.authors | join: ', ' }} ({{ site.paper.year }}). 
+                    {{ site.paper.title }}. <em>{{ site.paper.journal }}</em>.
+                </p>
+                {% if site.paper.doi %}
+                <p class="doi">DOI: <a href="https://doi.org/{{ site.paper.doi }}" target="_blank">{{ site.paper.doi }}</a></p>
+                {% endif %}
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; {{ site.paper.year }} {{ site.author }}. All rights reserved.</p>
+            <p>Built with Jekyll and hosted on GitHub Pages.</p>
+        </div>
+    </div>
+</footer>

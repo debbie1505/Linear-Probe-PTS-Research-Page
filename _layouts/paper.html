@@ -1,0 +1,75 @@
+---
+layout: default
+---
+
+<article class="paper">
+    <header class="paper-header">
+        <h1 class="paper-title">{{ page.title }}</h1>
+        
+        <div class="paper-meta">
+            <div class="authors">
+                {% for author in site.paper.authors %}
+                <span class="author">{{ author }}</span>{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+            </div>
+            
+            <div class="publication-info">
+                <span class="journal">{{ site.paper.journal }}</span>
+                <span class="year">{{ site.paper.year }}</span>
+                {% if site.paper.doi %}
+                <span class="doi">DOI: <a href="https://doi.org/{{ site.paper.doi }}" target="_blank">{{ site.paper.doi }}</a></span>
+                {% endif %}
+            </div>
+        </div>
+        
+        {% if page.abstract %}
+        <div class="abstract">
+            <h2>Abstract</h2>
+            <p>{{ page.abstract }}</p>
+        </div>
+        {% endif %}
+        
+        {% if site.paper.keywords %}
+        <div class="keywords">
+            <strong>Keywords:</strong>
+            {% for keyword in site.paper.keywords %}
+            <span class="keyword">{{ keyword }}</span>{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+        </div>
+        {% endif %}
+    </header>
+    
+    <div class="paper-content">
+        {{ content }}
+    </div>
+    
+    <footer class="paper-footer">
+        <div class="paper-actions">
+            <a href="{{ site.paper.pdf_url | relative_url }}" class="btn btn-primary" target="_blank">
+                <i class="icon-download"></i> Download PDF
+            </a>
+            <button class="btn btn-secondary" onclick="window.print()">
+                <i class="icon-print"></i> Print
+            </button>
+            <button class="btn btn-secondary" onclick="sharePaper()">
+                <i class="icon-share"></i> Share
+            </button>
+        </div>
+        
+        <div class="citation-info">
+            <h3>How to Cite</h3>
+            <div class="citation-formats">
+                <div class="citation-format">
+                    <strong>APA:</strong>
+                    <code id="apa-citation">{{ site.paper.authors | join: ', ' }} ({{ site.paper.year }}). {{ site.paper.title }}. <em>{{ site.paper.journal }}</em>.</code>
+                    <button class="copy-btn" onclick="copyCitation('apa-citation')">Copy</button>
+                </div>
+                <div class="citation-format">
+                    <strong>BibTeX:</strong>
+                    <code id="bibtex-citation">@article{author{{ site.paper.year }}, title={{{ site.paper.title }}}, author={{{ site.paper.authors | join: ' and ' }}}, journal={{{ site.paper.journal }}}, year={{{ site.paper.year }}}}</code>
+                    <button class="copy-btn" onclick="copyCitation('bibtex-citation')">Copy</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</article>

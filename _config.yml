@@ -1,0 +1,93 @@
+# Site Configuration
+title: "Pivotal Token Representations Encode Reasoning Shifts in Large Language Models"
+description: "A comprehensive study on how pivotal tokens encode reasoning shifts in large language models through linear probing"
+author: "Anonymous Author(s)"
+email: "email"
+url: "https://yourusername.github.io"
+baseurl: "/research-paper-site"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+timezone: America/New_York
+
+# Collections
+collections:
+  authors:
+    output: true
+    permalink: /authors/:name/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+
+# SEO
+seo:
+  type: "AcademicPaper"
+  locale: "en_US"
+
+# Social
+social:
+  name: "Your Name"
+  links:
+    - "https://github.com/yourusername"
+    - "https://scholar.google.com/citations?user=YOUR_ID"
+    - "https://orcid.org/0000-0000-0000-0000"
+
+# Paper metadata
+paper:
+  title: "Pivotal Token Representations Encode Reasoning Shifts in Large Language Models"
+  authors: ["Anonymous Author(s)"]
+  journal: "39th Conference on Neural Information Processing Systems (NeurIPS 2025)"
+  year: 2025
+  doi: "TBD"
+  abstract: "As large language models (LLMs) continue to scale in reasoning capability, the mechanisms by which their internal representations encode intermediate decision-making steps remain poorly understood. Prior work has utilized Pivotal Token Search (PTS) to identify pivotal tokens—tokens within a reasoning trace that substantially influence the probability of a correct final answer—but none have formulated methods for interpreting them. In this work, we present a probing method to predict and classify pivotal features underlying Qwen3-0.6B activations."
+  keywords: ["large language models", "reasoning", "pivotal tokens", "linear probing", "mechanistic interpretability", "neural networks"]
+  pdf_url: "/assets/papers/paper.pdf"
+
+# Navigation
+navigation:
+  - title: "Abstract"
+    url: "/abstract"
+  - title: "Methodology"
+    url: "/methodology"
+  - title: "Results"
+    url: "/results"
+  - title: "Discussion"
+    url: "/discussion"
+  - title: "References"
+    url: "/references"
+  - title: "About"
+    url: "/about"
+
+# Sass
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
