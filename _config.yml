@@ -64,17 +64,17 @@ paper:
 # Navigation
 navigation:
   - title: "Abstract"
-    url: "/abstract"
+    url: "/Linear-Probe_PTS-Research-Page/abstract"
   - title: "Methodology"
-    url: "/methodology"
+    url: "/Linear-Probe_PTS-Research-Page/methodology"
   - title: "Results"
-    url: "/results"
+    url: "/Linear-Probe_PTS-Research-Page/results"
   - title: "Discussion"
-    url: "/discussion"
+    url: "/Linear-Probe_PTS-Research-Page/discussion"
   - title: "References"
-    url: "/references"
+    url: "/Linear-Probe_PTS-Research-Page/references"
   - title: "About"
-    url: "/about"
+    url: "/Linear-Probe_PTS-Research-Page/about"
 
 # Sass
 sass:
