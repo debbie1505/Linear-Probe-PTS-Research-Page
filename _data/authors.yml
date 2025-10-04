@@ -6,7 +6,7 @@
   google_scholar: ""
   github: ""
   bio: ""
-  photo: "/assets/images/author-photos/steven-ngo.jpg"
+  photo: "/assets/images/author-photos/placeholder.svg"
 
 - name: "Taiwo Omoya"
   title: "Author"
@@ -16,7 +16,7 @@
   google_scholar: ""
   github: ""
   bio: ""
-  photo: "/assets/images/author-photos/taiwo-omoya.jpg"
+  photo: "/assets/images/author-photos/placeholder.svg"
 
 - name: "Zurabi Kochiashvili"
   title: "Author"
@@ -26,7 +26,7 @@
   google_scholar: ""
   github: ""
   bio: ""
-  photo: "/assets/images/author-photos/zurabi-kochiashvili.jpg"
+  photo: "/assets/images/author-photos/placeholder.svg"
 
 - name: "Dylan T. Tran"
   title: "Author"
@@ -36,7 +36,7 @@
   google_scholar: ""
   github: ""
   bio: ""
-  photo: "/assets/images/author-photos/dylan-tran.jpg"
+  photo: "/assets/images/author-photos/placeholder.svg"
 
 - name: "Cole Blondin"
   title: "Author*"
@@ -46,7 +46,7 @@
   google_scholar: ""
   github: ""
   bio: ""
-  photo: "/assets/images/author-photos/cole-blondin.jpg"
+  photo: "/assets/images/author-photos/placeholder.svg"
 
 - name: "Sean O'Brien"
   title: "Author*"
@@ -56,7 +56,7 @@
   google_scholar: ""
   github: ""
   bio: ""
-  photo: "/assets/images/author-photos/sean-obrien.jpg"
+  photo: "/assets/images/author-photos/placeholder.svg"
 
 - name: "Kevin Zhu"
   title: "Author*"
@@ -66,4 +66,4 @@
   google_scholar: ""
   github: ""
   bio: ""
-  photo: "/assets/images/author-photos/kevin-zhu.jpg"
+  photo: "/assets/images/author-photos/placeholder.svg"
